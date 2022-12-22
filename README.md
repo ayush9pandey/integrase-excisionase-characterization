@@ -13,4 +13,9 @@ Instructions to run the Jupyter notebooks:
 
 If you run into any issues, please feel free to raise an [issue](https://github.com/ayush9pandey/integrase-excisionase-characterization/issues).
 
+
+# Model parameters
+
+All model parameters are available on the [Wiki page](https://github.com/ayush9pandey/integrase-excisionase-characterization/wiki/) of this Github repository.
+
 Contact [Ayush Pandey](https://www.its.caltech.edu/~apandey/) (apandey at caltech dot edu) for any other questions.
