@@ -418,3 +418,36 @@ class SimpleExcisionaseFlipper(Mechanism):
                      integrase_excisionase_bind, int_exc_binding_curr_dna,
                      int_exc_binding_rev_dna]
         return reactions
+
+class TxTlMixture(Mixture):
+    def __init__(self, name="", rnap="RNAP", ribosome="Ribo", rnaase="RNAase", **kwargs):
+        Mixture.__init__(self, name=name, **kwargs)
+
+        # Create Components for TxTl machinery
+        self.rnap = Protein(rnap)
+        self.ribosome = Protein(ribosome)
+        self.rnaase = Protein(rnaase)
+        default_components = [
+            self.rnap, self.ribosome, self.rnaase
+        ]
+        self.add_components(default_components)
+
+        #Create TxTl Mechansisms
+        mech_tx = Transcription_MM(rnap = self.rnap.get_species())
+        mech_tl = Translation_MM(ribosome = self.ribosome.get_species())
+        mech_rna_deg = Degredation_mRNA_MM(nuclease=self.rnaase.get_species())
+        mech_cat = MichaelisMenten()
+        mech_bind = One_Step_Binding()
+
+       #Create Global Dilution Mechanisms
+        dilution_mechanism = Dilution(filter_dict = {"rna":True, "machinery":False}, 
+                                      default_on = False)
+        default_mechanisms = {
+            mech_tx.mechanism_type: mech_tx,
+            mech_tl.mechanism_type: mech_tl,
+            mech_cat.mechanism_type: mech_cat,
+            mech_bind.mechanism_type:mech_bind,
+            "dilution":mech_rna_deg,
+        }
+
+        self.add_mechanisms(default_mechanisms)
