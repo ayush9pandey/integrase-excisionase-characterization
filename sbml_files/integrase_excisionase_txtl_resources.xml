@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" level="3" version="2">
-  <model id="biocrnpyler_718597" name="biocrnpyler_718597" substanceUnits="mole" timeUnits="second" volumeUnits="litre" areaUnits="square_metre" lengthUnits="metre" extentUnits="mole">
+  <model id="biocrnpyler_845133" name="biocrnpyler_845133" substanceUnits="mole" timeUnits="second" volumeUnits="litre" areaUnits="square_metre" lengthUnits="metre" extentUnits="mole">
     <listOfUnitDefinitions>
       <unitDefinition id="square_metre">
         <listOfUnits>
@@ -45,59 +45,59 @@
     </listOfSpecies>
     <listOfParameters>
       <parameter id="kb_P_int_transcription_mm" value="100" constant="true"/>
-      <parameter id="ku_P_int_transcription_mm" value="1" constant="true"/>
-      <parameter id="ktx_P_int_transcription_mm" value="0.29" constant="true"/>
+      <parameter id="ku_P_int_transcription_mm" value="10" constant="true"/>
+      <parameter id="ktx_P_int_transcription_mm" value="0.5" constant="true"/>
       <parameter id="kb_RBS1_translation_mm" value="100" constant="true"/>
-      <parameter id="ku_RBS1_translation_mm" value="1" constant="true"/>
-      <parameter id="ktl_RBS1_translation_mm" value="0.008" constant="true"/>
-      <parameter id="a_i__" value="10" constant="true"/>
-      <parameter id="d_i__" value="1" constant="true"/>
-      <parameter id="k_int__" value="0.1" constant="true"/>
-      <parameter id="a_r__" value="0.033" constant="true"/>
-      <parameter id="d_r__" value="0.5" constant="true"/>
-      <parameter id="a_e1__" value="2" constant="true"/>
-      <parameter id="d_e1__" value="0.01" constant="true"/>
-      <parameter id="k_exc__" value="0.7" constant="true"/>
-      <parameter id="a_r1__" value="0.02" constant="true"/>
-      <parameter id="d_r1__" value="0.01" constant="true"/>
-      <parameter id="a_s2__" value="0.02" constant="true"/>
-      <parameter id="d_s2__" value="0.05" constant="true"/>
-      <parameter id="a_s1__" value="0.02" constant="true"/>
+      <parameter id="ku_RBS1_translation_mm" value="10" constant="true"/>
+      <parameter id="ktl_RBS1_translation_mm" value="2" constant="true"/>
+      <parameter id="a_i__" value="2" constant="true"/>
+      <parameter id="d_i__" value="50" constant="true"/>
+      <parameter id="k_int__" value="5" constant="true"/>
+      <parameter id="a_r__" value="10000" constant="true"/>
+      <parameter id="d_r__" value="0.0001" constant="true"/>
+      <parameter id="a_e1__" value="20" constant="true"/>
+      <parameter id="d_e1__" value="5" constant="true"/>
+      <parameter id="k_exc__" value="5" constant="true"/>
+      <parameter id="a_r1__" value="10" constant="true"/>
+      <parameter id="d_r1__" value="10000" constant="true"/>
+      <parameter id="a_s2__" value="2" constant="true"/>
+      <parameter id="d_s2__" value="0.5" constant="true"/>
+      <parameter id="a_s1__" value="10" constant="true"/>
       <parameter id="d_s1__" value="1" constant="true"/>
-      <parameter id="a_e2__" value="1" constant="true"/>
-      <parameter id="d_e2__" value="0.02" constant="true"/>
-      <parameter id="a_r2__" value="0.02" constant="true"/>
-      <parameter id="d_r2__" value="0.01" constant="true"/>
+      <parameter id="a_e2__" value="50" constant="true"/>
+      <parameter id="d_e2__" value="2" constant="true"/>
+      <parameter id="a_r2__" value="10" constant="true"/>
+      <parameter id="d_r2__" value="1" constant="true"/>
       <parameter id="kb_P_exc_transcription_mm" value="100" constant="true"/>
-      <parameter id="ku_P_exc_transcription_mm" value="1" constant="true"/>
-      <parameter id="ktx_P_exc_transcription_mm" value="0.292" constant="true"/>
+      <parameter id="ku_P_exc_transcription_mm" value="10" constant="true"/>
+      <parameter id="ktx_P_exc_transcription_mm" value="0.5" constant="true"/>
       <parameter id="kb_RBS2_translation_mm" value="100" constant="true"/>
-      <parameter id="ku_RBS2_translation_mm" value="1" constant="true"/>
-      <parameter id="ktl_RBS2_translation_mm" value="0.0113" constant="true"/>
+      <parameter id="ku_RBS2_translation_mm" value="10" constant="true"/>
+      <parameter id="ktl_RBS2_translation_mm" value="2" constant="true"/>
       <parameter id="kb_P_A_transcription_mm" value="80" constant="true"/>
-      <parameter id="ku_P_A_transcription_mm" value="2" constant="true"/>
-      <parameter id="ktx_P_A_transcription_mm" value="0.4" constant="true"/>
+      <parameter id="ku_P_A_transcription_mm" value="20" constant="true"/>
+      <parameter id="ktx_P_A_transcription_mm" value="0.3" constant="true"/>
       <parameter id="kb_RBS3_translation_mm" value="80" constant="true"/>
-      <parameter id="ku_RBS3_translation_mm" value="2" constant="true"/>
-      <parameter id="ktl_RBS3_translation_mm" value="0.08" constant="true"/>
+      <parameter id="ku_RBS3_translation_mm" value="20" constant="true"/>
+      <parameter id="ktl_RBS3_translation_mm" value="1" constant="true"/>
       <parameter id="kb_rna_T_int_rna_degredation_mm" value="20" constant="true"/>
       <parameter id="ku_rna_T_int_rna_degredation_mm" value="2" constant="true"/>
-      <parameter id="kdeg_rna_T_int_rna_degredation_mm" value="0.005" constant="true"/>
+      <parameter id="kdeg_rna_T_int_rna_degredation_mm" value="0.05" constant="true"/>
       <parameter id="kb_complex_protein_Ribo_rna_T_int__rna_degredation_mm" value="20" constant="true"/>
       <parameter id="ku_complex_protein_Ribo_rna_T_int__rna_degredation_mm" value="2" constant="true"/>
-      <parameter id="kdeg_complex_protein_Ribo_rna_T_int__rna_degredation_mm" value="0.005" constant="true"/>
+      <parameter id="kdeg_complex_protein_Ribo_rna_T_int__rna_degredation_mm" value="0.05" constant="true"/>
       <parameter id="kb_rna_T_exc_rna_degredation_mm" value="20" constant="true"/>
       <parameter id="ku_rna_T_exc_rna_degredation_mm" value="2" constant="true"/>
-      <parameter id="kdeg_rna_T_exc_rna_degredation_mm" value="0.005" constant="true"/>
+      <parameter id="kdeg_rna_T_exc_rna_degredation_mm" value="0.05" constant="true"/>
       <parameter id="kb_complex_protein_Ribo_rna_T_exc__rna_degredation_mm" value="20" constant="true"/>
       <parameter id="ku_complex_protein_Ribo_rna_T_exc__rna_degredation_mm" value="2" constant="true"/>
-      <parameter id="kdeg_complex_protein_Ribo_rna_T_exc__rna_degredation_mm" value="0.005" constant="true"/>
-      <parameter id="kb_rna_T_A_rna_degredation_mm" value="10" constant="true"/>
+      <parameter id="kdeg_complex_protein_Ribo_rna_T_exc__rna_degredation_mm" value="0.05" constant="true"/>
+      <parameter id="kb_rna_T_A_rna_degredation_mm" value="20" constant="true"/>
       <parameter id="ku_rna_T_A_rna_degredation_mm" value="2" constant="true"/>
-      <parameter id="kdeg_rna_T_A_rna_degredation_mm" value="0.001" constant="true"/>
-      <parameter id="kb_complex_protein_Ribo_rna_T_A__rna_degredation_mm" value="10" constant="true"/>
+      <parameter id="kdeg_rna_T_A_rna_degredation_mm" value="0.05" constant="true"/>
+      <parameter id="kb_complex_protein_Ribo_rna_T_A__rna_degredation_mm" value="20" constant="true"/>
       <parameter id="ku_complex_protein_Ribo_rna_T_A__rna_degredation_mm" value="2" constant="true"/>
-      <parameter id="kdeg_complex_protein_Ribo_rna_T_A__rna_degredation_mm" value="0.005" constant="true"/>
+      <parameter id="kdeg_complex_protein_Ribo_rna_T_A__rna_degredation_mm" value="0.05" constant="true"/>
     </listOfParameters>
     <listOfReactions>
       <reaction id="r0" name="r0" reversible="false">
