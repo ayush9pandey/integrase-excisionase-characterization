@@ -1,6 +1,10 @@
 # Integrase-Excisionase Characterization in TX-TL
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/)
+
 Data and models repository for paper on [Characterization of integrase and excisionase activity in cell-free protein expression system using a modeling and analysis pipeline](https://pubs.acs.org/doi/pdf/10.1021/acssynbio.2c00534). 
 
+# Installation
 Instructions to run the Jupyter notebooks:
 1. Run `pip install -r requirements.txt` from your terminal.
 
@@ -16,6 +20,22 @@ You can get started with the models using the [Get Started.ipynb](https://github
 
 If you run into any issues, please feel free to raise an [issue](https://github.com/ayush9pandey/integrase-excisionase-characterization/issues).
 
+# How to navigate this repository
+
+## CRN models and their dimensionality reduction
+We use BioCRNpyler to generate chemical reaction network models and AutoReduce to find reduced models. The generation of all models are in the `modeling/` directory in this repository.
+
+## Experimental data
+All experimental data used in the paper is available under the `experimental_data` directory. The plasmids used in this paper are available from [Addgene](https://www.addgene.org/browse/article/28233404/)
+
+## Data analysis
+We use Bioscrape to identify the most sensitive model parameters and identify them from the experimental data. The data analysis pipeline is available in the `data_analysis` directory.
+
+## SBML models
+All generated SBML models are available in the `sbml_files` directory. You can store other generated models here as well.
+
+## Output files
+All plots and visualizations are stored in the `outputs` directory. 
 
 # Model parameters
 
