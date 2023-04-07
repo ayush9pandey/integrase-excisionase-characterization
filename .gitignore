@@ -131,3 +131,6 @@ dmypy.json
 # Package specific
 .svg
 .png
+mcmc_results.csv
+mcmc_results.txt
+outputs/

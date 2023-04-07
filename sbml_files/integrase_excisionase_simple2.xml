@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" level="3" version="2">
+  <model id="biocrnpyler_689662" name="biocrnpyler_689662" substanceUnits="mole" timeUnits="second" volumeUnits="litre" areaUnits="square_metre" lengthUnits="metre" extentUnits="mole">
+    <listOfUnitDefinitions>
+      <unitDefinition id="square_metre">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="default" name="default" spatialDimensions="3" size="1e-06" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="dna_G_int" name="G_int" compartment="default" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="protein_Int" name="Int" compartment="default" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="dna_attP_attB" name="attP_attB" compartment="default" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="dna_attL_attR" name="attL_attR" compartment="default" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="complex_dna_attP_attB_protein_Int_4x_" name="dna_attP_attB_protein_Int_4x" compartment="default" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="complex_dna_attL_attR_protein_Int_4x_" name="dna_attL_attR_protein_Int_4x" compartment="default" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="protein_Exc" name="Exc" compartment="default" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="complex_complex_dna_attL_attR_protein_Int_4x__protein_Exc_4x_" name="complex_dna_attL_attR_protein_Int_4x__protein_Exc_4x" compartment="default" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="complex_complex_dna_attP_attB_protein_Int_4x__protein_Exc_4x_" name="complex_dna_attP_attB_protein_Int_4x__protein_Exc_4x" compartment="default" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="dna_G_exc" name="G_exc" compartment="default" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="protein_Y" name="Y" compartment="default" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="kexpress_P_int_gene_expression" value="1" constant="true"/>
+      <parameter id="a_i__" value="2" constant="true"/>
+      <parameter id="d_i__" value="50" constant="true"/>
+      <parameter id="k_int__" value="5" constant="true"/>
+      <parameter id="a_r__" value="10000" constant="true"/>
+      <parameter id="d_r__" value="0.0001" constant="true"/>
+      <parameter id="a_e1__" value="20" constant="true"/>
+      <parameter id="d_e1__" value="5" constant="true"/>
+      <parameter id="k_exc__" value="5" constant="true"/>
+      <parameter id="a_r1__" value="10" constant="true"/>
+      <parameter id="d_r1__" value="10000" constant="true"/>
+      <parameter id="a_s2__" value="2" constant="true"/>
+      <parameter id="d_s2__" value="0.5" constant="true"/>
+      <parameter id="kexpress_P_exc_gene_expression" value="1" constant="true"/>
+      <parameter id="kexpress_P_A_gene_expression" value="1" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="r0" name="r0" reversible="false">
+        <listOfReactants>
+          <speciesReference species="dna_G_int" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="dna_G_int" stoichiometry="1" constant="false"/>
+          <speciesReference species="protein_Int" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kexpress_P_int_gene_expression </ci>
+              <ci> dna_G_int </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r1" name="r1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="protein_Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="dna_attP_attB" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="complex_dna_attP_attB_protein_Int_4x_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> a_i__ </ci>
+              <apply>
+                <power/>
+                <ci> protein_Int </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <ci> dna_attP_attB </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r1rev" name="r1rev" reversible="false">
+        <listOfReactants>
+          <speciesReference species="complex_dna_attP_attB_protein_Int_4x_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="protein_Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="dna_attP_attB" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> d_i__ </ci>
+              <ci> complex_dna_attP_attB_protein_Int_4x_ </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r2" name="r2" reversible="false">
+        <listOfReactants>
+          <speciesReference species="complex_dna_attP_attB_protein_Int_4x_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="complex_dna_attL_attR_protein_Int_4x_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k_int__ </ci>
+              <ci> complex_dna_attP_attB_protein_Int_4x_ </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r3" name="r3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="complex_dna_attL_attR_protein_Int_4x_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="protein_Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="dna_attL_attR" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> a_r__ </ci>
+              <ci> complex_dna_attL_attR_protein_Int_4x_ </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r3rev" name="r3rev" reversible="false">
+        <listOfReactants>
+          <speciesReference species="protein_Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="dna_attL_attR" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="complex_dna_attL_attR_protein_Int_4x_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> d_r__ </ci>
+              <apply>
+                <power/>
+                <ci> protein_Int </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <ci> dna_attL_attR </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r4" name="r4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="protein_Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="complex_dna_attL_attR_protein_Int_4x_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="complex_complex_dna_attL_attR_protein_Int_4x__protein_Exc_4x_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> a_e1__ </ci>
+              <apply>
+                <power/>
+                <ci> protein_Exc </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <ci> complex_dna_attL_attR_protein_Int_4x_ </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r4rev" name="r4rev" reversible="false">
+        <listOfReactants>
+          <speciesReference species="complex_complex_dna_attL_attR_protein_Int_4x__protein_Exc_4x_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="protein_Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="complex_dna_attL_attR_protein_Int_4x_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> d_e1__ </ci>
+              <ci> complex_complex_dna_attL_attR_protein_Int_4x__protein_Exc_4x_ </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r5" name="r5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="complex_complex_dna_attL_attR_protein_Int_4x__protein_Exc_4x_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="complex_complex_dna_attP_attB_protein_Int_4x__protein_Exc_4x_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k_exc__ </ci>
+              <ci> complex_complex_dna_attL_attR_protein_Int_4x__protein_Exc_4x_ </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r6" name="r6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="complex_complex_dna_attP_attB_protein_Int_4x__protein_Exc_4x_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="protein_Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="protein_Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="dna_attP_attB" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> a_r1__ </ci>
+              <ci> complex_complex_dna_attP_attB_protein_Int_4x__protein_Exc_4x_ </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r6rev" name="r6rev" reversible="false">
+        <listOfReactants>
+          <speciesReference species="protein_Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="protein_Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="dna_attP_attB" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="complex_complex_dna_attP_attB_protein_Int_4x__protein_Exc_4x_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> d_r1__ </ci>
+              <apply>
+                <power/>
+                <ci> protein_Exc </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> protein_Int </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <ci> dna_attP_attB </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r7" name="r7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="protein_Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="complex_dna_attP_attB_protein_Int_4x_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="complex_complex_dna_attP_attB_protein_Int_4x__protein_Exc_4x_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> a_s2__ </ci>
+              <apply>
+                <power/>
+                <ci> protein_Exc </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <ci> complex_dna_attP_attB_protein_Int_4x_ </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r7rev" name="r7rev" reversible="false">
+        <listOfReactants>
+          <speciesReference species="complex_complex_dna_attP_attB_protein_Int_4x__protein_Exc_4x_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="protein_Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="complex_dna_attP_attB_protein_Int_4x_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> d_s2__ </ci>
+              <ci> complex_complex_dna_attP_attB_protein_Int_4x__protein_Exc_4x_ </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r8" name="r8" reversible="false">
+        <listOfReactants>
+          <speciesReference species="dna_G_exc" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="dna_G_exc" stoichiometry="1" constant="false"/>
+          <speciesReference species="protein_Exc" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kexpress_P_exc_gene_expression </ci>
+              <ci> dna_G_exc </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r9" name="r9" reversible="false">
+        <listOfReactants>
+          <speciesReference species="dna_attL_attR" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="dna_attL_attR" stoichiometry="1" constant="false"/>
+          <speciesReference species="protein_Y" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kexpress_P_A_gene_expression </ci>
+              <ci> dna_attL_attR </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
