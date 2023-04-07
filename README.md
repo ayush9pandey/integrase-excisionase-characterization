@@ -25,7 +25,7 @@ If you run into any issues, please feel free to raise an [issue](https://github.
 We use BioCRNpyler to generate chemical reaction network models and AutoReduce to find reduced models. The generation of all models are in the `modeling/` directory in this repository.
 
 ## Experimental data
-All experimental data used in the paper is available under the `experimental_data` directory. The plasmids used in this paper are available from [Addgene](https://www.addgene.org/browse/article/28233404/)
+All experimental data used in the paper is available under the `experimental_data` directory. The plasmids used in this paper are available from [Addgene](https://www.addgene.org/browse/article/28233404/).
 
 ## Data analysis
 We use Bioscrape to identify the most sensitive model parameters and identify them from the experimental data. The data analysis pipeline is available in the `data_analysis` directory.
