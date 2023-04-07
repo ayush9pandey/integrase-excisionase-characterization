@@ -1,0 +1,6 @@
+biocrnpyler>=1.1.1
+bioscrape>=1.2.0
+autoreduce>=0.2.0
+seaborn
+tqdm
+corner

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" level="3" version="2">
+  <model id="bioscrape_generated_model_861915" substanceUnits="mole" timeUnits="second" volumeUnits="litre" areaUnits="square_metre" lengthUnits="metre" extentUnits="mole">
+    <listOfUnitDefinitions>
+      <unitDefinition id="square_metre" name="square_metre">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="default" name="default" spatialDimensions="3" size="1e-06" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="A" name="A" compartment="default" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="C_A" name="C_A" compartment="default" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="C_E" name="C_E" compartment="default" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="C_I" name="C_I" compartment="default" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="C_R" name="C_R" compartment="default" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Exc" name="Exc" compartment="default" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="G_E" name="G_E" compartment="default" initialConcentration="0.5" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="G_I" name="G_I" compartment="default" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Int" name="Int" compartment="default" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="U" name="U" compartment="default" initialConcentration="0.5" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="YFP" name="YFP" compartment="default" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="a_e1" name="a_e1" value="0.05" constant="true"/>
+      <parameter id="a_i" name="a_i" value="0.3" constant="true"/>
+      <parameter id="a_r" name="a_r" value="1" constant="true"/>
+      <parameter id="a_r1" name="a_r1" value="0.02" constant="true"/>
+      <parameter id="a_s2" name="a_s2" value="0.02" constant="true"/>
+      <parameter id="d_e1" name="d_e1" value="0.01" constant="true"/>
+      <parameter id="d_i" name="d_i" value="500" constant="true"/>
+      <parameter id="d_r" name="d_r" value="0.001" constant="true"/>
+      <parameter id="d_r1" name="d_r1" value="0.0007" constant="true"/>
+      <parameter id="d_s2" name="d_s2" value="10" constant="true"/>
+      <parameter id="k" name="k" value="50" constant="true"/>
+      <parameter id="k_e" name="k_e" value="0.3" constant="true"/>
+      <parameter id="k_exc" name="k_exc" value="0.05" constant="true"/>
+      <parameter id="k_i" name="k_i" value="0.2" constant="true"/>
+      <parameter id="k_int" name="k_int" value="0.5" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="r0" name="r0" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="G_I" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="G_I" stoichiometry="1" constant="false"/>
+          <speciesReference species="Int" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k_i </ci>
+              <ci> G_I </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r1" name="r1" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="U" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="C_I" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> a_i </ci>
+              <apply>
+                <power/>
+                <ci> Int </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <ci> U </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r2" name="r2" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="C_I" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="U" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> d_i </ci>
+              <ci> C_I </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r3" name="r3" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="C_I" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="C_A" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k_int </ci>
+              <ci> C_I </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r4" name="r4" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="C_A" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="A" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> a_r </ci>
+              <ci> C_A </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r5" name="r5" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="A" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="C_A" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> d_r </ci>
+              <apply>
+                <power/>
+                <ci> Int </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <ci> A </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r6" name="r6" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="C_A" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="C_E" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> a_e1 </ci>
+              <apply>
+                <power/>
+                <ci> Exc </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <ci> C_A </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r7" name="r7" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="C_E" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="C_A" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> d_e1 </ci>
+              <ci> C_E </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r8" name="r8" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="C_E" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="C_R" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k_exc </ci>
+              <ci> C_E </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r9" name="r9" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="C_R" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="U" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> a_r1 </ci>
+              <ci> C_R </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r10" name="r10" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="Int" stoichiometry="4" constant="false"/>
+          <speciesReference species="U" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="C_R" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> d_r1 </ci>
+              <apply>
+                <power/>
+                <ci> Exc </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <apply>
+                <power/>
+                <ci> Int </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <ci> U </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r11" name="r11" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="C_I" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="C_R" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> a_s2 </ci>
+              <apply>
+                <power/>
+                <ci> Exc </ci>
+                <cn type="integer"> 4 </cn>
+              </apply>
+              <ci> C_I </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r12" name="r12" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="C_R" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Exc" stoichiometry="4" constant="false"/>
+          <speciesReference species="C_I" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> d_s2 </ci>
+              <ci> C_R </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r13" name="r13" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="G_E" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="G_E" stoichiometry="1" constant="false"/>
+          <speciesReference species="Exc" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k_e </ci>
+              <ci> G_E </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r14" name="r14" reversible="false">
+        <annotation>
+          <BioscrapeAnnotation/>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="A" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="A" stoichiometry="1" constant="false"/>
+          <speciesReference species="YFP" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k </ci>
+              <ci> A </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
