@@ -43,4 +43,4 @@ All model parameters are available on the [Wiki page](https://github.com/ayush9p
 
 # Contact
 
-Contact [Ayush Pandey](https://www.its.caltech.edu/~apandey/) (apandey at caltech dot edu) for any other questions.
+Contact [Ayush Pandey](https://ayush-pandey.github.io/) if you have any questions.
