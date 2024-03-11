@@ -1,5 +1,6 @@
 # Integrase-Excisionase Characterization in TX-TL
 [![Paper](https://img.shields.io/badge/doi-10.1021%2Facssynbio.2c00534-brightgreen)](https://pubs.acs.org/doi/10.1021/acssynbio.2c00534)
+[![bioRxiv](https://img.shields.io/badge/PDF-bioRxiv-red)](https://www.biorxiv.org/content/10.1101/2022.10.05.511053v1.full.pdf)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/)
 
 Data and models repository for paper on [Characterization of integrase and excisionase activity in cell-free protein expression system using a modeling and analysis pipeline](https://pubs.acs.org/doi/pdf/10.1021/acssynbio.2c00534). 
